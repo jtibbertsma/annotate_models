@@ -48,6 +48,9 @@ module AnnotateModels
 
   # Serializers https://github.com/rails-api/active_model_serializers
   SERIALIZERS_DIR       = File.join('app',  "serializers")
+  SERIALIZERS_V1_DIR    = File.join('app',  "serializers", "v1")
+  SERIALIZERS_V2_DIR    = File.join('app',  "serializers", "v2")
+  SERIALIZERS_ADMIN_DIR = File.join('app',  "serializers", "admin")
   SERIALIZERS_TEST_DIR  = File.join('test', "serializers")
   SERIALIZERS_SPEC_DIR  = File.join('spec', "serializers")
 
@@ -154,6 +157,9 @@ module AnnotateModels
     def serialize_files(root_directory)
       [
         File.join(root_directory, SERIALIZERS_DIR,       "%MODEL_NAME%_serializer.rb"),
+        File.join(root_directory, SERIALIZERS_V1_DIR,    "%MODEL_NAME%_serializer.rb"),
+        File.join(root_directory, SERIALIZERS_V2_DIR,    "%MODEL_NAME%_serializer.rb"),
+        File.join(root_directory, SERIALIZERS_ADMIN_DIR, "%MODEL_NAME%_serializer.rb"),
         File.join(root_directory, SERIALIZERS_TEST_DIR,  "%MODEL_NAME%_serializer_spec.rb"),
         File.join(root_directory, SERIALIZERS_SPEC_DIR,  "%MODEL_NAME%_serializer_spec.rb")
       ]
